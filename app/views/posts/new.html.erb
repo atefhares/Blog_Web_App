@@ -1,0 +1,10 @@
+<%= form_tag posts_path, method: "post" do %>
+  <div class="form-group">
+    <%= text_field_tag(:title, nil, placeholder: "Title...", class: "form-control") %>
+  </div>
+  <div class="form-group">
+    <%= text_area_tag(:title, nil, placeholder: "Content...", class: "form-control", rows: 5) %>
+  </div>
+
+  <%= submit_tag "Create", class: "btn btn-success btn-block" %>
+<% end %>
