@@ -22,4 +22,4 @@ A simple blog web application using RubyOnRails
 
 
 ##
-_This project is created by student of [ITI](http://iti.gov.eg/) - intake@40_
+_This project is created by students of [ITI](http://iti.gov.eg/) - intake@40_
