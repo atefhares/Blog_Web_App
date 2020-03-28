@@ -1,12 +1,17 @@
 class PostsController < ApplicationController
 
-  def show
+  def index
     @posts = Post.all
   end
 
   def show_my_posts
     @posts = Post.where(user_id: current_user.id).all
-    render 'posts/show'
+    render 'posts/index'
+  end
+
+
+  def show
+
   end
 
   def new
@@ -23,7 +28,6 @@ class PostsController < ApplicationController
     @post.user_id = params[:user_id]
     @post.created_at = DateTime.current
     @post.updated_at = DateTime.current
-    @post.updated_at = DateTime.current
     @post.save
 
     #redirect
@@ -31,10 +35,35 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    @post = Post.find params[:id]
   end
 
   def update
+    #validate params and request
 
+    # store data in database
+    @post = Post.find params[:id]
+    print "params ", params
+
+    @post.title = params[:post][:title]
+    @post.content = params[:post][:content]
+
+    @post.updated_at = DateTime.current
+    @post.save
+
+    #redirect
+    redirect_to :posts
+  end
+
+
+  def destroy
+    #validate params and request
+
+    # store data in database
+    @post = Post.find params[:id]
+    @post.destroy
+
+    #redirect
+    redirect_back(fallback_location: root_path)
   end
 end

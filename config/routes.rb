@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
   devise_for :users
-  resource :posts
   root :to => "welcome#index"
   get 'my_posts', :to => 'posts#show_my_posts'
 

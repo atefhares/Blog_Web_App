@@ -7,8 +7,11 @@
         <p class="card-text">author: <%= post.user.name %> |  <%= post.user.email %></p>
       <% else %>
         <p class="card-text">author: you</p>
+
+        <a href="<%= edit_post_path(post) %>" class="btn btn-primary">Edit</a>
+        <a href="<%= post_path(post) %>" class="btn btn-danger" data-method="delete">Delete</a>
       <% end %>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+
     </div>
   </div>
 <% end %>
