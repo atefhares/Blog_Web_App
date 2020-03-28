@@ -1,17 +1,17 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.order('created_at DESC').all
   end
 
   def show_my_posts
-    @posts = Post.where(user_id: current_user.id).all
+    @posts = Post.order('created_at DESC').where(user_id: current_user.id).all
     render 'posts/index'
   end
 
 
   def show
-
+    @post = Post.find params[:id]
   end
 
   def new

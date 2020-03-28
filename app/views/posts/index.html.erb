@@ -1,8 +1,17 @@
+<div class="text-center md-10">
+  <h6> Note: you can edit or delete your posts only!</h6>
+</div>
+
 <% @posts.each do |post| %>
   <div class="card md-12 mb-3">
     <div class="card-body">
-      <h5 class="card-title"> <%= post.title %></h5>
+      <a href="<%= post_path(post) %>">
+        <h5 class="card-title"><%= post.title %></h5>
+      </a>
       <p class="card-text"><%= post.content %></p>
+      <h6 class="text-left">created at: <%= post.created_at %></h6>
+      <h6 class="text-left">last updated at:  <%= post.updated_at %></h6>
+
       <% if !user_signed_in? || current_user.email != post.user.email %>
         <p class="card-text">author: <%= post.user.name %> |  <%= post.user.email %></p>
       <% else %>
