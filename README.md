@@ -10,7 +10,7 @@ A simple blog web application using RubyOnRails
 # Dependencies
 - Ruby 2.7 or higher
 - Rails 6.0 or higher
-- MySql server preconfigured with user @root and pass !Pass123
+- MySql server preconfigured with configurations from `database.yml`
 
 # Getting started
 - make sure of having the required dependencies
