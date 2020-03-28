@@ -3,7 +3,7 @@
     <div class="card-body">
       <h5 class="card-title"> <%= post.title %></h5>
       <p class="card-text"><%= post.content %></p>
-      <% if current_user.email != post.user.email %>
+      <% if !user_signed_in? || current_user.email != post.user.email %>
         <p class="card-text">author: <%= post.user.name %> |  <%= post.user.email %></p>
       <% else %>
         <p class="card-text">author: you</p>
