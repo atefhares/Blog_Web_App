@@ -19,3 +19,7 @@ A simple blog web application using RubyOnRails
 - configure database in mysql server according to configurations from `database.yml`
 - run `rails db:migrations`
 - start the server `rails server`
+
+
+##
+_This project is created by student of [ITI](http://iti.gov.eg/) - intake@40_
