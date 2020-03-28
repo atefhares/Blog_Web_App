@@ -5,3 +5,17 @@
 ![](https://img.shields.io/badge/Ruby-2.7-red)
 
 A simple blog web application using RubyOnRails
+
+
+# Dependencies
+- Ruby 2.7 or higher
+- Rails 6.0 or higher
+- MySql server preconfigured with user @root and pass !Pass123
+
+# Getting started
+- make sure of having the required dependencies
+- clone the repo
+- run `bundle install `
+- configure database in mysql server according to configurations from `database.yml`
+- run `rails db:migrations`
+- start the server `rails server`
