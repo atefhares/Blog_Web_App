@@ -16,9 +16,10 @@
 
       <a href="<%= edit_post_path(@post) %>" class="btn btn-primary">Edit</a>
       <a href="<%= post_path(@post) %>" class="btn btn-danger" data-method="delete">Delete</a>
+    <% end %>
+    <% if user_signed_in? %>
       <a href="<%= new_comment_path(@post) %>" class="btn btn-info">Comment</a>
     <% end %>
-
 
     <br/><br/>
     <h6 class="text-left">Comments: </h6>
