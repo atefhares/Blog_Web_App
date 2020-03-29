@@ -25,13 +25,17 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.title = params[:title]
     @post.content = params[:content]
-    @post.user_id = params[:user_id]
+    @post.user_id = current_user.id
     @post.created_at = DateTime.current
     @post.updated_at = DateTime.current
     @post.save
 
     #redirect
-    redirect_to :posts
+    if @post.id
+      redirect_to :posts
+    else
+      render 'posts/new'
+    end
   end
 
   def edit
@@ -43,8 +47,6 @@ class PostsController < ApplicationController
 
     # store data in database
     @post = Post.find params[:id]
-    print "params ", params
-
     @post.title = params[:post][:title]
     @post.content = params[:post][:content]
 
@@ -52,7 +54,11 @@ class PostsController < ApplicationController
     @post.save
 
     #redirect
-    redirect_to :posts
+    if @post.id
+      redirect_to :posts
+    else
+      render 'posts/new'
+    end
   end
 
 
