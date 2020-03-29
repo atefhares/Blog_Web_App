@@ -63,8 +63,6 @@ class PostsController < ApplicationController
 
 
   def destroy
-    #validate params and request
-
     # store data in database
     @post = Post.find params[:id]
     @post.destroy

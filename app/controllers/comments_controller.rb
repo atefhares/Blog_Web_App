@@ -23,4 +23,14 @@ class CommentsController < ApplicationController
       render 'comments/new'
     end
   end
+
+
+  def destroy
+    @comment = Comment.find params[:id]
+    if @comment.user.id == current_user.id
+      @comment.destroy
+      #redirect
+      redirect_back(fallback_location: root_path)
+    end
+  end
 end

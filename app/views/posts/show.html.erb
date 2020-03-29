@@ -1,5 +1,5 @@
 <div class="text-center md-10">
-  <h6> Note: you can edit or delete your posts only!</h6>
+  <h6> Note: you can edit or delete your posts and comments only!</h6>
 </div>
 
 <div class="card md-12 mb-3">
@@ -28,6 +28,10 @@
         <li>
           <%= comment.user.name %> [<%= comment.created_at %>]:
           <%= comment.content %>
+
+          <% if current_user.id == comment.user.id %>
+            <a href="<%= comment_path(comment) %>" data-method="delete">delete</a>
+        <% end %>
         </li>
       <% end %>
     </div>
