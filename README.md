@@ -10,8 +10,8 @@ A simple blog web application using RubyOnRails
 [<img src="https://github.com/atefhares/Blog_Web_App/blob/master/2.png" width="800"/>](https://github.com/atefhares/Blog_Web_App/blob/master/2.png)[<img src="https://github.com/atefhares/Blog_Web_App/blob/master/3.png" width="800"/>](https://github.com/atefhares/Blog_Web_App/blob/master/3.png)[<img src="https://github.com/atefhares/Blog_Web_App/blob/master/4.png" width="800"/>](https://github.com/atefhares/Blog_Web_App/blob/master/4.png)
 
 # Dependencies
-- Ruby 2.7 or higher
-- Rails 6.0 or higher
+- Ruby 2.7
+- Rails 6.0
 - MySql server preconfigured with configurations from `database.yml`
 
 # Getting started
